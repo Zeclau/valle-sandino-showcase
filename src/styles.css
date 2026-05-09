@@ -62,17 +62,48 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.02 250);
-  --brand: oklch(0.55 0.22 25);
-  --brand-foreground: oklch(0.99 0 0);
-  --brand-dark: oklch(0.42 0.18 25);
-  --ink: oklch(0.18 0.02 250);
+  --radius: 0.85rem;
+  /* Warm off-white background with subtle cream undertone */
+  --background: oklch(0.985 0.006 75);
+  --foreground: oklch(0.22 0.02 255);
+
+  /* Deep midnight navy — primary "ink" */
+  --ink: oklch(0.19 0.035 255);
+  --ink-soft: oklch(0.32 0.03 255);
+
+  /* Champagne / antique gold — luxury accent */
+  --brand: oklch(0.68 0.13 65);
+  --brand-foreground: oklch(0.18 0.02 255);
+  --brand-dark: oklch(0.52 0.12 55);
+  --brand-glow: oklch(0.82 0.11 80);
+
+  /* Burgundy secondary accent for depth */
+  --accent-wine: oklch(0.42 0.12 25);
+
+  /* Warm cream surface */
+  --cream: oklch(0.965 0.012 80);
+  --cream-deep: oklch(0.93 0.018 75);
+
+  /* Gradients & blends */
+  --gradient-hero: linear-gradient(135deg, oklch(0.18 0.04 255) 0%, oklch(0.22 0.05 270) 45%, oklch(0.32 0.08 35) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.78 0.13 75) 0%, oklch(0.62 0.14 55) 100%);
+  --gradient-warm: linear-gradient(180deg, oklch(0.985 0.006 75) 0%, oklch(0.95 0.018 70) 100%);
+  --gradient-ink: linear-gradient(180deg, oklch(0.19 0.035 255) 0%, oklch(0.13 0.04 260) 100%);
+
+  /* Premium shadows */
+  --shadow-soft: 0 1px 2px oklch(0.2 0.04 255 / 0.04), 0 8px 24px -8px oklch(0.2 0.04 255 / 0.08);
+  --shadow-elev: 0 30px 60px -30px oklch(0.2 0.04 255 / 0.25), 0 18px 36px -18px oklch(0.2 0.04 255 / 0.15);
+  --shadow-gold: 0 20px 50px -20px oklch(0.62 0.14 55 / 0.45);
+
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-dark: var(--brand-dark);
+  --color-brand-glow: var(--brand-glow);
   --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-accent-wine: var(--accent-wine);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
