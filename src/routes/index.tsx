@@ -49,7 +49,7 @@ const gallery = [
 
 function Index() {
   return (
-    <main className="min-h-screen bg-white text-slate-800">
+    <main className="min-h-screen bg-[var(--cream)] text-[var(--ink-soft)]">
       {/* HERO */}
       <section className="relative min-h-[92vh] w-full overflow-hidden">
         <img
@@ -57,17 +57,23 @@ function Index() {
           alt="Fachada Casa Moderna en Valle Sandino"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/55 to-slate-950/85" />
+        {/* layered overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-hero opacity-90 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
+        <div className="absolute inset-0 grain" />
+        {/* gold aura */}
+        <div className="pointer-events-none absolute -bottom-32 -left-24 h-[420px] w-[420px] rounded-full bg-[var(--brand)] opacity-25 blur-[120px]" />
+        <div className="pointer-events-none absolute -top-24 right-0 h-[360px] w-[360px] rounded-full bg-[var(--accent-wine)] opacity-30 blur-[140px]" />
 
         <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-between px-6 py-8">
           <header className="flex items-center justify-between text-white">
-            <div className="flex items-center gap-2 text-sm font-medium tracking-wide">
-              <span className="h-2 w-2 rounded-full bg-[var(--brand)]" />
+            <div className="flex items-center gap-2 text-sm font-medium tracking-[0.2em]">
+              <span className="h-1.5 w-6 rounded-full bg-gradient-gold" />
               KW · NICARAGUA
             </div>
             <a
               href={TEL_LINK}
-              className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm backdrop-blur transition hover:bg-white/20 sm:flex"
+              className="hidden items-center gap-2 rounded-full border border-white/25 bg-white/5 px-4 py-2 text-sm backdrop-blur-md transition hover:bg-white/15 sm:flex"
             >
               <Phone className="h-4 w-4" /> +505 8760-7418
             </a>
@@ -75,13 +81,13 @@ function Index() {
 
           <div className="max-w-3xl">
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full bg-[var(--brand)] px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-black/20">
+              <span className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-4 py-1.5 text-sm font-semibold text-[var(--ink)] shadow-gold">
                 <Tag className="h-3.5 w-3.5" /> $45,000 USD
               </span>
             </Reveal>
             <Reveal delay={120}>
               <h1 className="mt-5 text-4xl font-semibold leading-[1.05] text-white sm:text-6xl md:text-7xl">
-                Tu Casa Propia en <span className="text-[oklch(0.85_0.12_25)]">Valle Sandino</span>
+                Tu Casa Propia en <span className="text-gradient-gold italic">Valle Sandino</span>
               </h1>
             </Reveal>
             <Reveal delay={220}>
