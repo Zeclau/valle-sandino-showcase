@@ -98,17 +98,19 @@ function Index() {
             <Reveal delay={320}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
+                <a
                   href={WA_LINK}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[var(--brand)] px-7 py-4 text-base font-semibold text-white shadow-2xl shadow-[var(--brand)]/30 transition hover:bg-[var(--brand-dark)] hover:scale-[1.02]"
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gradient-gold px-7 py-4 text-base font-semibold text-[var(--ink)] shadow-gold transition hover:scale-[1.02]"
                 >
-                  <MessageCircle className="h-5 w-5" />
-                  Agendar Visita por WhatsApp
+                  <span className="absolute inset-0 bg-white/20 opacity-0 transition group-hover:opacity-100" />
+                  <MessageCircle className="relative h-5 w-5" />
+                  <span className="relative">Agendar Visita por WhatsApp</span>
                 </a>
                 <a
                   href="#galeria"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-4 text-sm font-medium text-white backdrop-blur transition hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-4 text-sm font-medium text-white backdrop-blur-md transition hover:bg-white/10"
                 >
                   Ver Galería
                 </a>
@@ -125,8 +127,8 @@ function Index() {
       </section>
 
       {/* QUICK STATS */}
-      <section className="border-b border-slate-100 bg-white">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 py-8 md:grid-cols-4 md:gap-6">
+      <section className="relative border-b hairline bg-gradient-warm">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-6 py-10 md:grid-cols-4 md:gap-6">
           {[
             { Icon: BedDouble, label: "Habitaciones", value: "2" },
             { Icon: Bath, label: "Baño", value: "1" },
@@ -134,13 +136,13 @@ function Index() {
             { Icon: WashingMachine, label: "Área de Servicio", value: "Sí" },
           ].map(({ Icon, label, value }, i) => (
             <Reveal key={label} delay={i * 80}>
-              <div className="flex items-center gap-4 rounded-2xl border border-slate-100 bg-white p-4 transition hover:border-[var(--brand)]/30 hover:shadow-sm">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand)]/10 text-[var(--brand)]">
+              <div className="flex items-center gap-4 rounded-2xl border hairline bg-white/70 p-4 backdrop-blur-sm transition hover:border-[var(--brand)]/40 hover:bg-white hover:shadow-soft">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-[var(--ink)] shadow-gold">
                   <Icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-slate-500">{label}</div>
-                  <div className="text-lg font-semibold text-slate-900">{value}</div>
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--ink-soft)]/70">{label}</div>
+                  <div className="text-lg font-semibold text-[var(--ink)]">{value}</div>
                 </div>
               </div>
             </Reveal>
