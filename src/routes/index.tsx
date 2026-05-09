@@ -253,22 +253,22 @@ function Index() {
       </section>
 
       {/* MAPA */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-6xl px-6 py-20">
+      <section className="relative mesh-warm overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand)]">
-              Ubicación
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--brand-dark)]">
+              <span className="h-px w-8 bg-[var(--brand)]" /> Ubicación
             </span>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-900 md:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold text-[var(--ink)] md:text-4xl">
               Carretera Nueva a León, Managua
             </h2>
-            <p className="mt-3 max-w-2xl text-slate-600">
+            <p className="mt-3 max-w-2xl text-[var(--ink-soft)]">
               Punto estratégico con conexión directa a Managua, comercios cercanos y rápida
               salida hacia León. Una de las zonas con mayor crecimiento del país.
             </p>
           </Reveal>
           <Reveal delay={120}>
-            <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 shadow-lg">
+            <div className="mt-8 overflow-hidden rounded-3xl border hairline shadow-elev ring-1 ring-[var(--ink)]/5">
               <iframe
                 title="Ubicación Casa Valle Sandino"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-86.3746663%2C12.1647189%2C-86.3546663%2C12.1847189&layer=mapnik&marker=12.1747189%2C-86.3646663"
@@ -280,7 +280,7 @@ function Index() {
               href="https://www.google.com/maps?q=12.1747189,-86.3646663"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)] hover:underline"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-dark)] hover:underline"
             >
               <MapPin className="h-4 w-4" /> Abrir en Google Maps
             </a>
@@ -289,107 +289,114 @@ function Index() {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <Reveal>
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-5xl">
-            Hablemos de tu próxima casa
-          </h2>
-          <p className="mt-3 max-w-2xl text-slate-600">
-            Ligia te acompaña en cada paso del proceso, desde la visita hasta la firma.
-          </p>
-        </Reveal>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          {/* Agente */}
+      <section id="contacto" className="relative overflow-hidden bg-gradient-ink text-white">
+        <div className="pointer-events-none absolute -top-32 left-1/3 h-[420px] w-[420px] rounded-full bg-[var(--brand)] opacity-20 blur-[140px]" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-[420px] w-[420px] rounded-full bg-[var(--accent-wine)] opacity-30 blur-[160px]" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-28">
           <Reveal>
-            <div className="h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-              <div className="flex items-center gap-5">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[var(--brand)] to-[var(--brand-dark)] text-2xl font-bold text-white">
-                  LD
-                </div>
-                <div>
-                  <div className="text-xl font-semibold text-slate-900">Ligia Donaire</div>
-                  <div className="text-sm text-slate-500">Keller Williams Nicaragua</div>
-                  <div className="mt-1 text-sm font-medium text-[var(--brand)]">+505 8760-7418</div>
-                </div>
-              </div>
-
-              <div className="mt-7 space-y-3">
-                <a
-                  href={TEL_LINK}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3.5 text-sm font-semibold text-slate-800 transition hover:border-slate-900 hover:bg-slate-900 hover:text-white"
-                >
-                  <Phone className="h-4 w-4" /> Llamar Ahora
-                </a>
-                <a
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--brand-dark)]"
-                >
-                  <MessageCircle className="h-4 w-4" /> Escribir al WhatsApp
-                </a>
-              </div>
-
-              <div className="mt-6 rounded-2xl bg-slate-50 p-4 text-sm text-slate-600">
-                "Atención personalizada y asesoría profesional con respaldo internacional KW."
-              </div>
-            </div>
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[var(--brand-glow)]">
+              <span className="h-px w-8 bg-[var(--brand)]" /> Contacto
+            </span>
+            <h2 className="mt-4 text-3xl font-semibold text-white md:text-5xl">
+              Hablemos de tu <span className="text-gradient-gold italic">próxima casa</span>
+            </h2>
+            <p className="mt-3 max-w-2xl text-white/70">
+              Ligia te acompaña en cada paso del proceso, desde la visita hasta la firma.
+            </p>
           </Reveal>
 
-          {/* Form */}
-          <Reveal delay={120}>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.currentTarget as HTMLFormElement;
-                const data = new FormData(f);
-                const msg = `Hola Ligia, soy ${data.get("name")} (Tel: ${data.get("phone")}). ${data.get("message")}`;
-                window.open(`https://wa.me/50587607418?text=${encodeURIComponent(msg)}`, "_blank");
-              }}
-              className="h-full rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">Envíanos un mensaje</h3>
-              <p className="mt-1 text-sm text-slate-500">Respondemos en menos de 24 horas.</p>
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            {/* Agente */}
+            <Reveal>
+              <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-elev">
+                <div className="flex items-center gap-5">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-gold text-2xl font-bold text-[var(--ink)] shadow-gold">
+                    LD
+                  </div>
+                  <div>
+                    <div className="text-xl font-semibold text-white">Ligia Donaire</div>
+                    <div className="text-sm text-white/60">Keller Williams Nicaragua</div>
+                    <div className="mt-1 text-sm font-medium text-[var(--brand-glow)]">+505 8760-7418</div>
+                  </div>
+                </div>
 
-              <div className="mt-6 space-y-4">
-                <input
-                  required
-                  name="name"
-                  placeholder="Nombre completo"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand)]/20"
-                />
-                <input
-                  required
-                  name="phone"
-                  type="tel"
-                  placeholder="Teléfono"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand)]/20"
-                />
-                <textarea
-                  name="message"
-                  rows={4}
-                  defaultValue="Me interesa la propiedad en Valle Sandino"
-                  className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand)]/20"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
-                  <Send className="h-4 w-4" /> Enviar mensaje
-                </button>
+                <div className="mt-7 space-y-3">
+                  <a
+                    href={TEL_LINK}
+                    className="flex items-center justify-center gap-2 rounded-xl border border-white/20 px-5 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white hover:text-[var(--ink)]"
+                  >
+                    <Phone className="h-4 w-4" /> Llamar Ahora
+                  </a>
+                  <a
+                    href={WA_LINK}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-gradient-gold px-5 py-3.5 text-sm font-semibold text-[var(--ink)] shadow-gold transition hover:scale-[1.01]"
+                  >
+                    <MessageCircle className="h-4 w-4" /> Escribir al WhatsApp
+                  </a>
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm italic text-white/75">
+                  "Atención personalizada y asesoría profesional con respaldo internacional KW."
+                </div>
               </div>
-            </form>
-          </Reveal>
+            </Reveal>
+
+            {/* Form */}
+            <Reveal delay={120}>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const f = e.currentTarget as HTMLFormElement;
+                  const data = new FormData(f);
+                  const msg = `Hola Ligia, soy ${data.get("name")} (Tel: ${data.get("phone")}). ${data.get("message")}`;
+                  window.open(`https://wa.me/50587607418?text=${encodeURIComponent(msg)}`, "_blank");
+                }}
+                className="h-full rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-elev"
+              >
+                <h3 className="text-xl font-semibold text-white">Envíanos un mensaje</h3>
+                <p className="mt-1 text-sm text-white/60">Respondemos en menos de 24 horas.</p>
+
+                <div className="mt-6 space-y-4">
+                  <input
+                    required
+                    name="name"
+                    placeholder="Nombre completo"
+                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-[var(--brand)] focus:bg-white/10 focus:ring-2 focus:ring-[var(--brand)]/30"
+                  />
+                  <input
+                    required
+                    name="phone"
+                    type="tel"
+                    placeholder="Teléfono"
+                    className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-[var(--brand)] focus:bg-white/10 focus:ring-2 focus:ring-[var(--brand)]/30"
+                  />
+                  <textarea
+                    name="message"
+                    rows={4}
+                    defaultValue="Me interesa la propiedad en Valle Sandino"
+                    className="w-full resize-none rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-[var(--brand)] focus:bg-white/10 focus:ring-2 focus:ring-[var(--brand)]/30"
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--cream)]"
+                  >
+                    <Send className="h-4 w-4" /> Enviar mensaje
+                  </button>
+                </div>
+              </form>
+            </Reveal>
+          </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-100 bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-center text-xs text-slate-500 md:flex-row md:text-left">
+      <footer className="border-t hairline bg-[var(--cream)]">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-center text-xs text-[var(--ink-soft)]/80 md:flex-row md:text-left">
           <div>© {new Date().getFullYear()} Ligia Donaire · Keller Williams Nicaragua</div>
           <div>
-            Desarrollado por <span className="font-semibold text-slate-700">Sacuanjoche.dev</span> · Marketing Inmobiliario de Alto Nivel
+            Desarrollado por <span className="font-semibold text-[var(--ink)]">Sacuanjoche.dev</span> · Marketing Inmobiliario de Alto Nivel
           </div>
         </div>
       </footer>
@@ -399,7 +406,7 @@ function Index() {
         href={WA_LINK}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[var(--brand)] px-5 py-3.5 text-sm font-semibold text-white shadow-2xl shadow-[var(--brand)]/40 transition hover:bg-[var(--brand-dark)] md:hidden"
+        className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-3.5 text-sm font-semibold text-[var(--ink)] shadow-gold transition hover:scale-[1.03] md:hidden"
       >
         <MessageCircle className="h-5 w-5" /> WhatsApp
       </a>
