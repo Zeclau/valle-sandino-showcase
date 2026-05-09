@@ -98,7 +98,6 @@ function Index() {
             <Reveal delay={320}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
-                <a
                   href={WA_LINK}
                   target="_blank"
                   rel="noreferrer"
